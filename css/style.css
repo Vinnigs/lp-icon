@@ -103,8 +103,6 @@ h3{
 
 /* ~~~~~~ */
 
-
-
 /* MODAL FORM */
 
 .bg-modal{
@@ -182,9 +180,6 @@ input[type=submit]{
     cursor: pointer;
 }
 /* ~~~~ */
-
-
-
 
 .container{
     width: 90%;
@@ -493,7 +488,6 @@ header .container .menu-nav .nav-list a{
 }
 
 #apartamentos .cont-apart .cont-right{
-    width: 60%;
     margin-left: 32px;
 }
 
@@ -529,8 +523,6 @@ header .container .menu-nav .nav-list a{
     position: relative;
     font-weight: 600;
     color: var(--cor-primaria);
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--cor-primaria);
 }
 
 #apartamentos .cont-apart .cont-right .info-nav .info-bottom p{
@@ -553,7 +545,6 @@ header .container .menu-nav .nav-list a{
 
 #area-lazer{
     margin-bottom: 160px;
-    padding-top: 115px;
 }
 
 #area-lazer .details-lazer{
@@ -571,10 +562,9 @@ header .container .menu-nav .nav-list a{
     margin-left: 56px;
 }
 
-#area-lazer .lazer-left{
+#area-lazer .lazer-left .container{
     display: flex;
     gap: 40px;
-
     .cont-left{
         width: 40%;
         height: 274px;
@@ -596,10 +586,11 @@ header .container .menu-nav .nav-list a{
     }
 }
 
-#area-lazer .lazer-right{
+#area-lazer .lazer-right .container{
     display: flex;
     flex-direction: row-reverse;
     gap: 40px;
+
     .cont-left{
         width: 40%;
         height: 274px;
@@ -615,12 +606,29 @@ header .container .menu-nav .nav-list a{
         gap: 14px;
         justify-content: center;
         text-align: right;
+
     }
 
     .cont-right .destaque{
         font-weight: 700;
     }
 }
+
+#area-lazer .lazer-right,
+#area-lazer .lazer-left{
+    position: relative;
+}
+#area-lazer .bg-detail{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #A68665;
+    bottom: -80px;
+    z-index: -1;
+
+    opacity: 0.10;
+}
+
 #area-lazer .lazer-left img,
 #area-lazer .lazer-right img{
     object-fit: cover;
@@ -644,6 +652,11 @@ header .container .menu-nav .nav-list a{
         margin-top: 32px;
     }
 }
+
+#diferenciais .container-diferenciais .cont-left #sustentabilidade-cont, #apartamentos-cont, #seguranca-cont {
+    height: 100%;
+}
+
 
 #diferenciais .container-diferenciais .cont-left .img-left{
     width: 100%;
@@ -795,9 +808,11 @@ header .container .menu-nav .nav-list a{
     width: 226px;
     height: 56px;
     margin-top: 40px;
+
+    cursor: pointer;
 }
 
-#call-action .cont-call .info-call .button-call a{
+#call-action .cont-call .info-call .button-call p{
     color: var(--cor-terciaria);
     font-weight: 600;
 }
@@ -931,6 +946,11 @@ footer .creditos .midias-sociais{
         margin: 0;
     }
 
+    #apartamentos .cont-apart{
+        flex-direction: column;
+        gap: 40px;
+    }
+
     /* #apartamentos .cont-apart .swiper-wrapper {
         flex-direction: column; 
         align-items: center;
@@ -1052,7 +1072,48 @@ footer .creditos .midias-sociais{
     }
 }
 
+@media only screen and (max-width:850px){
+    .container{
+        width: 100%;
+    }
+
+    #img-principal .swiper .swiper-wrapper .cards-img{
+        height: 390px;
+    }
+
+    #area-lazer .lazer-left .container,
+    #area-lazer .lazer-right .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #area-lazer .lazer-left .container .cont-left,
+    #area-lazer .lazer-right .container .cont-left{
+        width: 80%;
+    }
+
+    #area-lazer .lazer-right .container .cont-right{
+        text-align: center;
+    }
+
+    #area-lazer .lazer-left, #area-lazer .lazer-right{
+        padding-bottom: 80px;
+    }
+
+}
+
 @media only screen and (max-width:730px){
+
+    #hero{
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 80px;
+    }
+
+    #hero .cont-left,
+    #hero .cont-right{
+        width: 100%;
+    }
 
     .contato-follow{
         transform: none;
@@ -1101,7 +1162,7 @@ footer .creditos .midias-sociais{
         align-items: center;
         position: fixed;
         z-index: 10;
-        top: 91px;
+        top: 80px;
         right: 0px;
         width: 100%;
         height: auto;
@@ -1177,14 +1238,6 @@ footer .creditos .midias-sociais{
     h3{
         font-size: 22px;
     }
-
-    #hero .cont-left{
-        width: 40%;
-    }
-
-    #hero .cont-right{
-        width: 60%;
-    }
 }
 
 @media only screen and (max-width:600px){
@@ -1196,5 +1249,8 @@ footer .creditos .midias-sociais{
 @media only screen and (max-width:500px){
     #diferenciais .container-diferenciais .cont-right .info-nav .info-top{
         flex-wrap: wrap;
+    }
+    #empreendimento {
+        overflow-x: hidden;
     }
 }
