@@ -1253,4 +1253,9 @@ footer .creditos .midias-sociais{
     #empreendimento {
         overflow-x: hidden;
     }
+
+    #call-action .cont-call img  {
+        width: 304px;
+    }
+
 }
